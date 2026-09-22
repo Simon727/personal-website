@@ -1,53 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Academic curriculum vitae of Xuancheng Jin." />
-    <title>Xuancheng Jin | Academic Curriculum Vitae</title>
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172b4d'/%3E%3Cpath d='M18 18h28v8H35v21h-8V26h-9z' fill='%23ffffff'/%3E%3C/svg%3E"
-    />
+    <meta name="theme-color" content="#102a43" />
+    <meta name="description" content="金宣成的个人学术简历与科研成果主页，聚焦土地资源管理、土壤有机碳、遥感反演与生态系统服务。" />
+    <title>金宣成｜学术简历</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23102a43'/%3E%3Cpath d='M18 19h28v7H34v19h-7V26h-9z' fill='%23d8b36a'/%3E%3Ccircle cx='45' cy='43' r='6' fill='%232d9c95'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/resume-data.js" defer></script>
     <script src="./js/main.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <a href="../" aria-label="Back to personal website">Xuancheng Jin</a>
-    </header>
-
-    <main>
-      <section class="intro-section">
-        <p class="eyebrow">Academic Resume</p>
-        <h1>Xuancheng Jin</h1>
-        <p>Academic Curriculum Vitae</p>
-      </section>
-
-      <nav class="section-list" aria-label="Curriculum vitae sections">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#research-interests">Research Interests</a>
-        <a href="#publications">Publications</a>
-        <a href="#research-projects">Research Projects</a>
-        <a href="#awards">Awards</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <a href="#download-cv">Download CV</a>
-      </nav>
-
-      <div class="placeholder-sections">
-        <section id="about"><h2>About</h2><p>Content will be added later.</p></section>
-        <section id="education"><h2>Education</h2><p>Content will be added later.</p></section>
-        <section id="research-interests"><h2>Research Interests</h2><p>Content will be added later.</p></section>
-        <section id="publications"><h2>Publications</h2><p>Content will be added later.</p></section>
-        <section id="research-projects"><h2>Research Projects</h2><p>Content will be added later.</p></section>
-        <section id="awards"><h2>Awards</h2><p>Content will be added later.</p></section>
-        <section id="skills"><h2>Skills</h2><p>Content will be added later.</p></section>
-        <section id="contact"><h2>Contact</h2><p>Content will be added later.</p></section>
-        <section id="download-cv"><h2>Download CV</h2><p>The PDF version will be added later.</p></section>
+    <a class="skip-link" href="#main">跳转到主要内容</a>
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="返回页面顶部"><span class="brand-mark" aria-hidden="true">J</span><span class="brand-name">金宣成</span></a>
+        <nav class="desktop-nav" aria-label="主要导航">
+          <a href="#about">简介</a><a href="#research">科研</a><a href="#education">教育</a><a href="#honors">荣誉</a><a href="#evidence">成果证明</a><a href="#contact">联系</a>
+        </nav>
+        <div class="header-actions">
+          <a class="home-button" href="../">主站</a>
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="切换深浅色模式"><span aria-hidden="true">◐</span></button>
+          <button class="print-button" id="print-button" type="button">打印简历</button>
+        </div>
       </div>
-    </main>
+    </header>
+    <main id="main"></main>
+    <footer class="site-footer"><div class="footer-inner"><p id="footer-copy"></p><a href="#top">返回顶部 ↑</a></div></footer>
+    <noscript><p class="noscript">请启用 JavaScript 以查看完整简历内容。</p></noscript>
   </body>
 </html>
