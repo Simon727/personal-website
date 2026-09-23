@@ -52,7 +52,6 @@
           <a href="mailto:${escapeHTML(p.email)}">${escapeHTML(p.email)}</a>
           <a href="${escapeHTML(p.github)}" target="_blank" rel="noopener noreferrer">GitHub · Simon727</a>
           <a href="${escapeHTML(p.orcid)}" target="_blank" rel="noopener noreferrer">ORCID · 0009-0009-0583-6142</a>
-          <a href="${escapeHTML(p.resumePdf || './files/金宣成简历.pdf')}" download="金宣成简历.pdf" target="_blank" rel="noopener noreferrer">📄 简历附件 · PDF</a>
         </div>
         <ul class="highlight-list">${highlights}</ul>
         <div class="about-skills">${data.skills.map((group) => `<div class="about-skill-group"><span class="about-skill-label">${escapeHTML(group.title)}</span><div class="about-skill-tags">${group.items.map((item) => `<span class="about-skill-tag">${escapeHTML(item)}</span>`).join("")}</div></div>`).join("")}</div>
@@ -69,7 +68,6 @@
   if (footerEl) {
     footerEl.textContent = "Last updated: September 2026，© 2026 Xuancheng Jin · Academic Portfolio";
   }
-  document.querySelector("#print-button").addEventListener("click", () => window.print());
   const themeButton = document.querySelector("#theme-toggle");
   const storedTheme = localStorage.getItem("resume-theme");
   if (storedTheme === "dark" || (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) document.documentElement.dataset.theme = "dark";
