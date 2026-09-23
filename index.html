@@ -1,24 +1,151 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Xuancheng Jin's personal website." />
-    <title>Xuancheng Jin | Personal Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#0b0f19" />
+    <meta name="description" content="经典复古贪吃蛇网页小游戏！支持键盘和手机触控，多种难度挑战最高分！" />
+    <title>贪吃蛇大作战 · Retro Snake Arcade</title>
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172b4d'/%3E%3Cpath d='M18 18h28v8H35v21h-8V26h-9z' fill='%23ffffff'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0f19'/%3E%3Ccircle cx='32' cy='32' r='20' fill='%2310b981'/%3E%3Ccircle cx='26' cy='28' r='4' fill='%23ffffff'/%3E%3Ccircle cx='38' cy='28' r='4' fill='%23ffffff'/%3E%3Ccircle cx='28' cy='28' r='2' fill='%230b0f19'/%3E%3Ccircle cx='40' cy='28' r='2' fill='%230b0f19'/%3E%3Cpath d='M44 38c-3 4-9 6-12 6s-9-2-12-6' stroke='%23064e3b' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/main.js" defer></script>
   </head>
   <body>
-    <main class="home-shell">
-      <p class="eyebrow">Personal Website</p>
-      <h1>Xuancheng Jin</h1>
-      <p class="intro">This website is currently under development.</p>
-      <a class="primary-link" href="./resume/">Academic Resume <span aria-hidden="true">→</span></a>
-    </main>
+    <div class="arcade-wrapper">
+      <!-- Arcade Header -->
+      <header class="arcade-header">
+        <div class="logo-group">
+          <span class="logo-icon" aria-hidden="true">🐍</span>
+          <div>
+            <h1 class="logo-title">RETRO SNAKE</h1>
+            <p class="logo-sub">经典复古贪吃蛇 · 街机版</p>
+          </div>
+        </div>
+
+        <div class="header-controls">
+          <div class="difficulty-select-wrap">
+            <label for="difficulty-select" class="sr-only">游戏难度</label>
+            <select id="difficulty-select" aria-label="选择游戏难度">
+              <option value="easy">休闲模式 (慢速)</option>
+              <option value="normal" selected>经典模式 (正常)</option>
+              <option value="hard">高手模式 (快速)</option>
+              <option value="insane">极速狂飙 (极限)</option>
+            </select>
+          </div>
+          <button id="sound-btn" class="icon-btn" type="button" aria-label="声音开关" title="声音开关">
+            <span id="sound-icon">🔊</span>
+          </button>
+          <button id="pause-btn" class="icon-btn" type="button" aria-label="暂停游戏" title="暂停 (空格键)">
+            <span id="pause-icon">⏸</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Stats Scoreboard -->
+      <div class="scoreboard">
+        <div class="score-card">
+          <span class="score-label">当前得分</span>
+          <span class="score-val" id="current-score">0</span>
+        </div>
+        <div class="score-card highlight">
+          <span class="score-label">历史最高</span>
+          <span class="score-val" id="high-score">0</span>
+        </div>
+        <div class="score-card">
+          <span class="score-label">吃掉苹果</span>
+          <span class="score-val" id="apples-eaten">0</span>
+        </div>
+      </div>
+
+      <!-- Main Game Canvas Container -->
+      <div class="canvas-frame">
+        <canvas id="game-canvas" width="400" height="400"></canvas>
+
+        <!-- Overlay: Start Screen -->
+        <div id="start-overlay" class="game-overlay active">
+          <div class="overlay-modal">
+            <div class="overlay-icon">🎮</div>
+            <h2>经典贪吃蛇</h2>
+            <p class="overlay-desc">控制贪吃蛇吃掉苹果，注意不要撞墙或咬到自己！</p>
+            <div class="overlay-hints">
+              <span class="hint-tag">方向键 / WASD 移动</span>
+              <span class="hint-tag">空格键 暂停</span>
+            </div>
+            <button id="start-game-btn" class="btn primary-btn" type="button">开始游戏</button>
+          </div>
+        </div>
+
+        <!-- Overlay: Pause Screen -->
+        <div id="pause-overlay" class="game-overlay">
+          <div class="overlay-modal">
+            <div class="overlay-icon">⏸️</div>
+            <h2>游戏已暂停</h2>
+            <p class="overlay-desc">按空格键或点击下方按钮继续挑战</p>
+            <button id="resume-game-btn" class="btn primary-btn" type="button">继续游戏</button>
+          </div>
+        </div>
+
+        <!-- Overlay: Game Over Screen -->
+        <div id="gameover-overlay" class="game-overlay">
+          <div class="overlay-modal">
+            <div class="overlay-icon">💥</div>
+            <h2 id="gameover-title">游戏结束</h2>
+            <div id="new-record-badge" class="new-record-badge">🎉 新纪录达成！</div>
+            <div class="final-score-box">
+              <div class="final-item">
+                <span>最终得分</span>
+                <strong id="final-score">0</strong>
+              </div>
+              <div class="final-divider"></div>
+              <div class="final-item">
+                <span>最高纪录</span>
+                <strong id="final-high-score">0</strong>
+              </div>
+            </div>
+            <button id="restart-game-btn" class="btn primary-btn" type="button">再玩一局</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bonus Notification Bar -->
+      <div id="bonus-bar" class="bonus-bar">
+        <span class="bonus-badge">⭐ 黄金果实出现！</span>
+        <div class="bonus-progress-track">
+          <div id="bonus-progress" class="bonus-progress-fill"></div>
+        </div>
+        <span class="bonus-pts">+50分</span>
+      </div>
+
+      <!-- Controls Hint / Virtual D-Pad for Mobile -->
+      <div class="controls-area">
+        <div class="desktop-tips">
+          <span>键盘提示：<strong>↑ ↓ ← →</strong> 或 <strong>W A S D</strong> 控制方向 · <strong>空格键</strong> 暂停 · <strong>R</strong> 重启</span>
+        </div>
+
+        <div class="virtual-dpad" id="virtual-dpad" aria-label="虚拟方向按键">
+          <div class="dpad-row">
+            <button class="dpad-btn dpad-up" data-dir="UP" type="button" aria-label="向上">▲</button>
+          </div>
+          <div class="dpad-row middle">
+            <button class="dpad-btn dpad-left" data-dir="LEFT" type="button" aria-label="向左">◀</button>
+            <div class="dpad-center"></div>
+            <button class="dpad-btn dpad-right" data-dir="RIGHT" type="button" aria-label="向右">▶</button>
+          </div>
+          <div class="dpad-row">
+            <button class="dpad-btn dpad-down" data-dir="DOWN" type="button" aria-label="向下">▼</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arcade Footer -->
+      <footer class="arcade-footer">
+        <p>© 2026 Retro Snake Arcade · 经典网页街机小游戏 · 畅快畅玩</p>
+      </footer>
+    </div>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>
