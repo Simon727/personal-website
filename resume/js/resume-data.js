@@ -11,12 +11,7 @@ window.RESUME_DATA = {
     email: "jinxuancheng727@gmail.com",
     github: "https://github.com/Simon727",
     orcid: "https://orcid.org/0009-0009-0583-6142",
-    facts: [
-      { label: "2026 论文", value: "2 篇" },
-      { label: "第一作者", value: "1 篇" },
-      { label: "国家奖学金", value: "1 项" },
-      { label: "软件著作权", value: "12 项" },
-    ],
+    facts: [],
   },
   highlights: ["土壤有机碳制图", "遥感与空间分析", "机器学习与深度学习", "生态系统服务评估"],
   research: [
