@@ -15,6 +15,7 @@
   font-family: Inter, "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
   font-synthesis: none;
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 :root[data-theme="dark"] {
@@ -52,7 +53,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .icon-button { width: 42px; height: 42px; border-radius: 50%; font-size: 1.15rem; }
 .print-button, .home-button { min-height: 42px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 99px; text-decoration: none; }
 
-.hero { min-height: calc(100vh - 76px); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(330px, .7fr); align-items: center; gap: clamp(50px, 7vw, 110px); padding-block: 80px; scroll-margin-top: 76px; }
+.hero { min-height: calc(100vh - 76px); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(330px, .7fr); align-items: center; gap: clamp(50px, 7vw, 110px); padding-block: 80px; scroll-margin-top: 76px; scroll-snap-align: start; }
 .kicker, .eyebrow { margin: 0; color: var(--teal); font-size: .78rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
 .hero h1 { margin: 10px 0 2px; font-family: "Noto Serif SC", "Songti SC", SimSun, serif; font-size: clamp(4rem, 9vw, 7.5rem); font-weight: 750; line-height: 1.03; letter-spacing: -.07em; }
 .role { margin: 0; color: var(--gold); font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 750; letter-spacing: .04em; }
@@ -84,7 +85,20 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .fact strong { font-family: Georgia, serif; font-size: 1.35rem; }
 .fact span { color: var(--ink-soft); font-size: .78rem; }
 
-.section { padding-block: 56px; scroll-margin-top: 76px; }
+.section {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: clamp(40px, 6vh, 70px);
+  scroll-margin-top: 76px;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+}
+#research {
+  justify-content: flex-start;
+  padding-top: 48px;
+}
 .section-heading { display: grid; grid-template-columns: 70px 1fr; gap: 22px; margin-bottom: 24px; }
 .section-heading h2, .about-band h2 { margin: 2px 0 6px; font-family: "Noto Serif SC", "Songti SC", SimSun, serif; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; letter-spacing: -.045em; }
 .section-heading p:last-child { margin: 0; color: var(--ink-soft); font-size: .95rem; }
@@ -159,7 +173,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 @media (prefers-reduced-motion: reduce) { :root { scroll-behavior: auto; } }
 @media (max-width: 1040px) { .desktop-nav { display: none; } .header-actions { margin-left: auto; } .evidence-grid { grid-template-columns: 1fr; } }
 @media (max-width: 900px) {
+  :root { scroll-snap-type: none; }
   .hero { min-height: auto; grid-template-columns: 1fr; padding-block: 64px 80px; }
+  .section { min-height: auto; justify-content: flex-start; padding-block: 50px; }
   .profile-panel { width: min(100%, 520px); transform: none; }
   .skills-grid, .about-grid, .honors-list { grid-template-columns: 1fr; }
   .skill-group { min-height: 0; }
@@ -171,7 +187,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
   .brand-name, .print-button, .home-button { display: none; }
   .hero { gap: 46px; padding-top: 48px; }
   .hero h1 { font-size: clamp(3.4rem, 20vw, 5.2rem); }
-  .section { padding-block: 80px; }
+  .section { padding-block: 44px; }
   .section-heading, .research-card { grid-template-columns: 44px 1fr; gap: 14px; }
   .education-topline, .experience-item, .footer-inner { display: block; }
   .education-topline > strong { display: inline-block; margin-top: 18px; text-align: left; }
@@ -185,10 +201,10 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
   :root { --paper: white; --surface: white; --ink: #102a43; --ink-soft: #486581; --line: #d9e2ec; }
   .site-header, .site-footer, .contact-row, .status-dot, .evidence-section { display: none !important; }
   body { font-size: 10.5pt; }
-  .hero { min-height: auto; grid-template-columns: 1.4fr .6fr; padding-block: 24px 34px; }
+  .hero { min-height: auto; grid-template-columns: 1.4fr .6fr; padding-block: 24px 34px; break-after: page; page-break-after: always; }
   .hero h1 { font-size: 46pt; }
   .profile-panel, .education-card { box-shadow: none; }
-  .section, .about-band { padding-block: 30px; }
+  .section, .about-band { padding-block: 24px; min-height: auto; break-before: page; page-break-before: always; }
   .skills-section, .about-band { color: #102a43; background: white; }
   .skill-group { min-height: 0; border-color: var(--line); }
   .skill-group li, .section-heading.light h2, .section-heading.light .section-number, .about-band h2, .about-band p, .about-band a { color: #102a43 !important; }
