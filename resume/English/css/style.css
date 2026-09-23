@@ -56,8 +56,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 
 .hero { min-height: calc(100vh - 76px); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(330px, .7fr); align-items: center; gap: clamp(50px, 7vw, 110px); padding-block: 80px; scroll-margin-top: 76px; scroll-snap-align: start; }
 .kicker, .eyebrow { margin: 0; color: var(--teal); font-size: .78rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
-.hero h1 { margin: 10px 0 2px; font-family: "Noto Serif SC", "Songti SC", SimSun, serif; font-size: clamp(4rem, 9vw, 7.5rem); font-weight: 750; line-height: 1.03; letter-spacing: -.07em; }
-.role { margin: 0; color: var(--gold); font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 750; letter-spacing: .04em; }
+.hero h1 { margin: 10px 0 2px; font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; font-size: clamp(2.8rem, 5.8vw, 4.8rem); font-weight: 750; line-height: 1.06; letter-spacing: -.03em; white-space: nowrap; }
+.role { margin: 0; color: var(--gold); font-size: clamp(1rem, 1.7vw, 1.35rem); font-weight: 750; letter-spacing: .01em; }
 .intro { max-width: 700px; margin: 28px 0 0; color: var(--ink-soft); font-size: clamp(1.05rem, 1.6vw, 1.2rem); }
 .research-statement-box { margin: 20px 0 0; max-width: 720px; padding: 14px 20px; border-left: 4px solid var(--teal); background: color-mix(in srgb, var(--teal) 8%, var(--surface)); border-radius: 0 14px 14px 0; box-shadow: 0 4px 16px rgba(16, 42, 67, 0.04); }
 .statement-tag { display: inline-block; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
@@ -82,7 +82,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .portrait-wrap img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 34%; }
 .status-dot { position: absolute; right: 18px; bottom: 18px; width: 18px; height: 18px; border: 4px solid white; border-radius: 50%; background: #28a745; }
 .profile-affiliation { display: flex; align-items: center; justify-content: center; padding: 16px 8px 10px; }
-.profile-affiliation span { padding: 6px 16px; border: 1px solid color-mix(in srgb, var(--teal) 35%, transparent); border-radius: 99px; color: var(--teal); background: color-mix(in srgb, var(--teal) 8%, transparent); font-size: .88rem; font-weight: 750; letter-spacing: .02em; }
+.profile-affiliation span { padding: 6px 14px; border: 1px solid color-mix(in srgb, var(--teal) 35%, transparent); border-radius: 99px; color: var(--teal); background: color-mix(in srgb, var(--teal) 8%, transparent); font-size: .82rem; font-weight: 750; letter-spacing: .01em; white-space: nowrap; }
 .facts-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
 .fact { display: flex; flex-direction: column; padding: 15px 6px 4px; }
 .fact strong { font-family: Georgia, serif; font-size: 1.35rem; }
@@ -103,7 +103,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
   padding-top: 48px;
 }
 .section-heading { display: grid; grid-template-columns: 70px 1fr; gap: 22px; margin-bottom: 24px; }
-.section-heading h2, .about-band h2 { margin: 2px 0 6px; font-family: "Noto Serif SC", "Songti SC", SimSun, serif; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; letter-spacing: -.045em; }
+.section-heading h2, .about-band h2 { margin: 2px 0 6px; font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; letter-spacing: -.03em; }
 .section-heading p:last-child { margin: 0; color: var(--ink-soft); font-size: .95rem; }
 .section-number { margin: 4px 0 0; color: var(--gold); font-family: Georgia, serif; font-size: 1.15rem; font-weight: 700; }
 
@@ -137,7 +137,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .skill-group li { padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.1); color: #cedce8; }
 
 .honors-list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 36px; }
-.honor-item { display: grid; grid-template-columns: 96px 1fr; gap: 14px; padding: 10px 0; border-top: 1px solid var(--line); font-size: .92rem; align-items: baseline; }
+.honor-item { display: grid; grid-template-columns: 115px 1fr; gap: 14px; padding: 10px 0; border-top: 1px solid var(--line); font-size: .92rem; align-items: baseline; }
 .honor-item:last-child { border-bottom: 1px solid var(--line); }
 .honor-year { color: var(--teal); font-family: Georgia, serif; font-weight: 700; font-size: .88rem; }
 .honor-item strong { display: block; line-height: 1.45; }
@@ -189,7 +189,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
   .header-inner { min-height: 66px; }
   .brand-name, .print-button, .home-button { display: none; }
   .hero { gap: 46px; padding-top: 48px; }
-  .hero h1 { font-size: clamp(3.4rem, 20vw, 5.2rem); }
+  .hero h1 { font-size: clamp(2.2rem, 11vw, 3.4rem); white-space: normal; }
   .section { padding-block: 44px; }
   .section-heading, .research-card { grid-template-columns: 44px 1fr; gap: 14px; }
   .education-topline, .experience-item, .footer-inner { display: block; }

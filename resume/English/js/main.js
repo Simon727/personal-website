@@ -42,14 +42,8 @@
           <p class="statement-desc">${escapeHTML(p.researchStatement || "Remote sensing and spatial modelling for soil and ecosystem assessment.")}</p>
         </div>
         <div class="contact-row">
-          <a class="primary-button" href="mailto:${escapeHTML(p.email)}">
-            <svg class="button-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <span>Email Me</span>
-          </a>
-          <a class="primary-button" href="#research">
-            <svg class="button-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Publications</span>
-          </a>
+          <a class="primary-button" href="mailto:${escapeHTML(p.email)}">Email Contact</a>
+          <a class="primary-button" href="#research">View Research</a>
           <a class="primary-button download-button" href="${escapeHTML(p.resumePdf || './files/金宣成简历.pdf')}" download="Xuancheng_Jin_CV.pdf" target="_blank" rel="noopener noreferrer">
             <svg class="button-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span>Download CV</span>
