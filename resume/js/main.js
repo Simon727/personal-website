@@ -31,7 +31,32 @@
   const experience = data.experience.map((item) => `<article class="experience-item reveal"><p class="experience-period">${escapeHTML(item.period)}</p><div><h3>${escapeHTML(item.organization)}</h3><p class="experience-role">${escapeHTML(item.role)}</p><p>${escapeHTML(item.detail)}</p></div></article>`).join("");
   main.innerHTML = `
     <section class="hero section-shell" id="about">
-      <div class="hero-copy reveal"><p class="kicker">${escapeHTML(p.englishName)}</p><h1>${escapeHTML(p.name)}</h1><p class="role">${escapeHTML(p.role)}</p><p class="intro">${escapeHTML(p.intro)}</p><div class="contact-row"><a class="primary-button" href="mailto:${escapeHTML(p.email)}">邮件联系</a><a class="primary-button" href="#research">查看成果</a></div><div class="profile-links"><a href="mailto:${escapeHTML(p.email)}">${escapeHTML(p.email)}</a><a href="${escapeHTML(p.github)}" target="_blank" rel="noopener noreferrer">GitHub · Simon727</a><a href="${escapeHTML(p.orcid)}" target="_blank" rel="noopener noreferrer">ORCID · 0009-0009-0583-6142</a></div><ul class="highlight-list">${highlights}</ul><div class="about-skills">${data.skills.map((group) => `<div class="about-skill-group"><span class="about-skill-label">${escapeHTML(group.title)}</span><div class="about-skill-tags">${group.items.map((item) => `<span class="about-skill-tag">${escapeHTML(item)}</span>`).join("")}</div></div>`).join("")}</div></div>
+      <div class="hero-copy reveal">
+        <p class="kicker">${escapeHTML(p.englishName)}</p>
+        <h1>${escapeHTML(p.name)}</h1>
+        <p class="role">${escapeHTML(p.role)}</p>
+        <p class="intro">${escapeHTML(p.intro)}</p>
+        <div class="research-statement-box">
+          <span class="statement-tag">Research Statement</span>
+          <p class="statement-desc">${escapeHTML(p.researchStatement || "面向土壤与生态系统评估的遥感与空间建模")}</p>
+        </div>
+        <div class="contact-row">
+          <a class="primary-button" href="mailto:${escapeHTML(p.email)}">邮件联系</a>
+          <a class="primary-button" href="#research">查看成果</a>
+          <a class="primary-button download-button" href="${escapeHTML(p.resumePdf || './files/金宣成简历.pdf')}" download="金宣成简历.pdf" target="_blank" rel="noopener noreferrer">
+            <svg class="button-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>下载简历</span>
+          </a>
+        </div>
+        <div class="profile-links">
+          <a href="mailto:${escapeHTML(p.email)}">${escapeHTML(p.email)}</a>
+          <a href="${escapeHTML(p.github)}" target="_blank" rel="noopener noreferrer">GitHub · Simon727</a>
+          <a href="${escapeHTML(p.orcid)}" target="_blank" rel="noopener noreferrer">ORCID · 0009-0009-0583-6142</a>
+          <a href="${escapeHTML(p.resumePdf || './files/金宣成简历.pdf')}" download="金宣成简历.pdf" target="_blank" rel="noopener noreferrer">📄 简历附件 · PDF</a>
+        </div>
+        <ul class="highlight-list">${highlights}</ul>
+        <div class="about-skills">${data.skills.map((group) => `<div class="about-skill-group"><span class="about-skill-label">${escapeHTML(group.title)}</span><div class="about-skill-tags">${group.items.map((item) => `<span class="about-skill-tag">${escapeHTML(item)}</span>`).join("")}</div></div>`).join("")}</div>
+      </div>
       <aside class="profile-panel reveal" aria-label="个人概览"><div class="portrait-wrap"><img src="${escapeHTML(p.avatar)}" alt="${escapeHTML(p.name)}的证件照" /><span class="status-dot" aria-hidden="true"></span></div><div class="profile-affiliation"><span>${escapeHTML(p.affiliation)}</span></div><div class="facts-grid">${facts}</div></aside>
     </section>
     <section class="section section-shell" id="research"><div class="section-heading reveal"><p class="section-number">01</p><div><p class="eyebrow">Research</p><h2>科研与成果</h2><p>聚焦黑土区土壤有机碳、生态系统服务、遥感反演与土地资源管理。</p></div></div><div class="research-list">${research}</div></section>
@@ -40,7 +65,10 @@
     <section class="section section-shell" id="experience"><div class="section-heading reveal"><p class="section-number">04</p><div><p class="eyebrow">Experience</p><h2>研究与实践经历</h2></div></div><div class="experience-list">${experience}</div></section>
     `;
 
-  document.querySelector("#footer-copy").textContent = `© ${new Date().getFullYear()} ${p.name}.`;
+  const footerEl = document.querySelector("#footer-copy");
+  if (footerEl) {
+    footerEl.textContent = "Last updated: September 2026，© 2026 Xuancheng Jin · Academic Portfolio";
+  }
   document.querySelector("#print-button").addEventListener("click", () => window.print());
   const themeButton = document.querySelector("#theme-toggle");
   const storedTheme = localStorage.getItem("resume-theme");

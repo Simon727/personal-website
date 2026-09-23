@@ -5,6 +5,8 @@ window.RESUME_DATA = {
     englishName: "Xuancheng Jin",
     role: "吉林大学 · 地球科学学院 · 土地资源管理",
     intro: "吉林大学土地资源管理专业硕士研究生，关注黑土区土壤有机碳、耕地保护、生态系统服务与遥感反演。具备空间分析、机器学习、科研写作和项目研究经验。",
+    researchStatement: "面向土壤与生态系统评估的遥感与空间建模",
+    resumePdf: "./files/金宣成简历.pdf",
     affiliation: "吉林大学 · 地球科学学院",
     avatar: "./images/profile.jpg",
     email: "jinxuancheng727@gmail.com",
