@@ -56,7 +56,7 @@
         <ul class="highlight-list">${highlights}</ul>
         <div class="about-skills">${data.skills.map((group) => `<div class="about-skill-group"><span class="about-skill-label">${escapeHTML(group.title)}</span><div class="about-skill-tags">${group.items.map((item) => `<span class="about-skill-tag">${escapeHTML(item)}</span>`).join("")}</div></div>`).join("")}</div>
       </div>
-      <aside class="profile-panel reveal" aria-label="个人概览"><div class="portrait-wrap"><img src="${escapeHTML(p.avatar)}" alt="${escapeHTML(p.name)}的证件照" /><span class="status-dot" aria-hidden="true"></span></div><div class="profile-affiliation"><span>${escapeHTML(p.affiliation)}</span></div><div class="facts-grid">${facts}</div></aside>
+      <aside class="profile-panel reveal" aria-label="个人概览"><div class="portrait-wrap"><img src="${escapeHTML(p.avatar)}" alt="${escapeHTML(p.name)}的证件照" /><span class="status-dot" aria-hidden="true"></span></div><div class="profile-affiliation"><span>${escapeHTML(p.affiliation)}</span></div>${facts ? `<div class="facts-grid">${facts}</div>` : ""}</aside>
     </section>
     <section class="section section-shell" id="research"><div class="section-heading reveal"><p class="section-number">01</p><div><p class="eyebrow">Research</p><h2>科研与成果</h2><p>聚焦黑土区土壤有机碳、生态系统服务、遥感反演与土地资源管理。</p></div></div><div class="research-list">${research}</div></section>
     <section class="section section-shell" id="education"><div class="section-heading reveal"><p class="section-number">02</p><div><p class="eyebrow">Education</p><h2>教育背景</h2></div></div><div class="education-list">${education}</div></section>
