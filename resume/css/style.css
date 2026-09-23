@@ -132,7 +132,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .skill-group li { padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.1); color: #cedce8; }
 
 .honors-list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 36px; }
-.honor-item { display: grid; grid-template-columns: 85px 1fr; gap: 14px; padding: 11px 0; border-top: 1px solid var(--line); font-size: .92rem; align-items: baseline; }
+.honor-item { display: grid; grid-template-columns: 96px 1fr; gap: 14px; padding: 10px 0; border-top: 1px solid var(--line); font-size: .92rem; align-items: baseline; }
 .honor-item:last-child { border-bottom: 1px solid var(--line); }
 .honor-year { color: var(--teal); font-family: Georgia, serif; font-weight: 700; font-size: .88rem; }
 .honor-item strong { display: block; line-height: 1.45; }
