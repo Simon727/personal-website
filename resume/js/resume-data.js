@@ -16,24 +16,30 @@ window.RESUME_DATA = {
   highlights: ["土壤有机碳制图", "遥感与空间分析", "机器学习与深度学习", "生态系统服务评估"],
   research: [
     {
-      type: "第一作者论文", year: "2026",
+      type: "中科院一区", year: "2026",
       title: "Uncertainty in ecosystem service value assessment caused by spatial scale and aggregation rules: a multiscale study of Northeast China from 2000 to 2024",
-      meta: "Ecological Indicators 190 (2026) 115426",
+      meta: "Ecological Indicators 190 (2026) 115426 · 第一作者",
       detail: "量化空间尺度与聚合规则对东北地区生态系统服务价值估算及空间解释的影响。",
       url: "https://doi.org/10.1016/j.ecolind.2026.115426",
     },
     {
-      type: "共同作者论文", year: "2026",
+      type: "中科院三区", year: "2026",
       title: "Integrating transformer-based learning and Sentinel-2 bare soil composites for soil organic carbon mapping in the black soil region of Northeast China",
       meta: "Scientific Reports 16, 3784 (2026) · 第三作者",
       detail: "融合 Sentinel-2 裸土合成影像与 TabPFN，实现东北黑土区小样本条件下的土壤有机碳高精度制图。",
       url: "https://doi.org/10.1038/s41598-025-33682-4",
     },
     {
-      type: "论文", year: "2025",
+      type: "中文核心论文", year: "2025",
       title: "基于生境质量变化的吉林省西部盐碱区生态系统修复分区",
-      meta: "《农业资源与环境学报》· 第二作者",
+      meta: "《农业资源与环境学报》2025年第42卷第3期 · 第二作者",
       detail: "围绕吉林省西部盐碱区生境质量变化与生态修复分区开展研究。",
+    },
+    {
+      type: "实用新型专利", year: "2023",
+      title: "一种土壤样品采样用采集设备",
+      meta: "第一发明人 · 专利号 ZL 2022 2 2816456.8",
+      detail: "以第一发明人身份取得实用新型专利 1 项。",
     },
     {
       type: "主持项目", year: "2026",
@@ -44,13 +50,13 @@ window.RESUME_DATA = {
     {
       type: "主持项目", year: "2023",
       title: "中国粮食主产区耕地绿色利用转型时空特征与影响机制",
-      meta: "大学生省级科技创新基金 · 普通项目 · 研究周期 2 年",
+      meta: "大学生省级科技创新基金",
       detail: "主持开展粮食主产区耕地绿色利用转型的时空特征识别与影响机制研究。",
     },
     {
       type: "参与项目", year: "2025",
-      title: "基于“三位一体”的吉林省西部盐碱区多尺度耕地保护生态补偿研究",
-      meta: "吉林省教育厅社会科学研究项目 · 吉教科文验字〔2025〕239号",
+      title: "基于"三位一体"的吉林省西部盐碱区多尺度耕地保护生态补偿研究",
+      meta: "吉林省教育厅社会科学研究项目 · 项目号：JJKH20240478SK",
       detail: "作为课题主要成员参与多尺度耕地保护与生态补偿研究，项目已通过结题验收。",
     },
     {
@@ -58,12 +64,6 @@ window.RESUME_DATA = {
       title: "呼伦贝尔农场区不同耕作年限下土壤有机碳空间差异遥感识别研究",
       meta: "吉林大学地球科学学院 · 成果报告编写成员",
       detail: "参与耕地开垦历史遥感重建、土壤有机碳反演建模与空间制图。",
-    },
-    {
-      type: "实用新型专利", year: "2023",
-      title: "一种土壤样品采样用采集设备",
-      meta: "第一发明人 · 专利号 ZL 2022 2 2816456.8",
-      detail: "以第一发明人身份取得实用新型专利 1 项。",
     },
     {
       type: "计算机软件著作权", year: "2022—2025",
