@@ -6,7 +6,7 @@ window.RESUME_DATA = {
     role: "土地资源管理 · 遥感科学 · 空间分析",
     intro: "吉林大学土地资源管理专业硕士研究生，关注黑土区土壤有机碳、耕地保护、生态系统服务与遥感反演。具备空间分析、机器学习、科研写作和项目研究经验。",
     location: "吉林 · 长春",
-    status: "开放学术交流与合作",
+    langCerts: ["CATTI 英语三级笔译", "CET-4 595", "CET-6 581"],
     avatar: "./images/profile.jpg",
     email: "jinxuancheng727@gmail.com",
     github: "https://github.com/Simon727",
@@ -87,7 +87,6 @@ window.RESUME_DATA = {
   skills: [
     { title: "空间分析与遥感", items: ["ArcGIS", "Google Earth Engine", "Sentinel-2 / Landsat", "空间统计", "遥感制图"] },
     { title: "模型与研究方法", items: ["Python", "机器学习", "深度学习", "TabPFN", "InVEST", "PLUS", "SHAP"] },
-    { title: "语言与学术能力", items: ["CATTI 英语三级笔译", "CET-4 595", "CET-6 581", "英文论文写作", "期刊审稿"] },
   ],
   honors: [
     { year: "2024", title: "本科生国家奖学金", detail: "2023—2024 学年度" },

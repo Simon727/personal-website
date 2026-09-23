@@ -75,16 +75,17 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .portrait-wrap { position: relative; overflow: hidden; aspect-ratio: 4 / 5; border-radius: 24px; background: #079bd3; }
 .portrait-wrap img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 34%; }
 .status-dot { position: absolute; right: 18px; bottom: 18px; width: 18px; height: 18px; border: 4px solid white; border-radius: 50%; background: #28a745; }
-.profile-caption { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 4px 15px; }
-.profile-caption strong { font-size: .95rem; }
-.profile-caption span { color: var(--ink-soft); font-size: .82rem; }
+.profile-caption { display: flex; align-items: center; justify-content: center; padding: 12px 4px 10px; }
+.profile-caption span { color: var(--ink-soft); font-size: .84rem; }
+.lang-certs { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 4px 14px; border-bottom: 1px solid var(--line); }
+.lang-cert-tag { padding: 4px 11px; border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent); border-radius: 99px; color: var(--gold); background: color-mix(in srgb, var(--gold) 7%, transparent); font-size: .78rem; font-weight: 700; }
 .facts-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
 .fact { display: flex; flex-direction: column; padding: 15px 6px 4px; }
 .fact strong { font-family: Georgia, serif; font-size: 1.35rem; }
 .fact span { color: var(--ink-soft); font-size: .78rem; }
 
-.section { padding-block: 110px; scroll-margin-top: 76px; }
-.section-heading { display: grid; grid-template-columns: 80px 1fr; gap: 26px; margin-bottom: 50px; }
+.section { padding-block: 72px; scroll-margin-top: 76px; }
+.section-heading { display: grid; grid-template-columns: 80px 1fr; gap: 26px; margin-bottom: 32px; }
 .section-heading h2, .about-band h2 { margin: 4px 0 8px; font-family: "Noto Serif SC", "Songti SC", SimSun, serif; font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1.2; letter-spacing: -.045em; }
 .section-heading p:last-child { margin: 0; color: var(--ink-soft); }
 .section-number { margin: 7px 0 0; color: var(--gold); font-family: Georgia, serif; font-size: 1.2rem; font-weight: 700; }
@@ -119,13 +120,13 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .skill-group li { padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.1); color: #cedce8; }
 
 .honors-list { margin: 0; padding: 0; list-style: none; }
-.honor-item { display: grid; grid-template-columns: 130px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); font-size: 1.05rem; }
+.honor-item { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding: 14px 0; border-top: 1px solid var(--line); font-size: .97rem; }
 .honor-item:last-child { border-bottom: 1px solid var(--line); }
-.honor-year { color: var(--teal); font-family: Georgia, serif; font-weight: 700; }
+.honor-year { color: var(--teal); font-family: Georgia, serif; font-weight: 700; font-size: .9rem; }
 .honor-item strong { display: block; }
-.honor-item small { display: block; margin-top: 3px; color: var(--ink-soft); font-size: .84rem; }
-.experience-list { display: grid; gap: 20px; }
-.experience-item { display: grid; grid-template-columns: 230px 1fr; gap: 36px; padding: 32px; border-left: 4px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; background: var(--surface); }
+.honor-item small { display: block; margin-top: 2px; color: var(--ink-soft); font-size: .82rem; }
+.experience-list { display: grid; gap: 16px; }
+.experience-item { display: grid; grid-template-columns: 200px 1fr; gap: 28px; padding: 24px 28px; border-left: 4px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; background: var(--surface); }
 .experience-item h3 { margin: 0; font-size: 1.25rem; }
 .experience-item p { margin: 5px 0 0; color: var(--ink-soft); }
 .experience-role { color: var(--teal) !important; font-weight: 700; }
